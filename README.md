@@ -19,4 +19,4 @@
 
 ### Yeah, you can see comits too on the discord server
 
-## Contribute: mention comicxall on discord server and say he
+## Contribute: mention comicxall on discord server and say him, sending Discord name
