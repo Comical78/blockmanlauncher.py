@@ -4,6 +4,7 @@
 
 - Selfbot API
 - Bot API
+- Webhook API
 
 ## Common FAQ
 
@@ -13,10 +14,12 @@
 
 ## Does I get banned if I use Selfbot API?
 
-### no
+### No
 
 ## Is this one official?
 
 ### Yeah, you can see comits too on the discord server
 
 ## Contribute: mention comicxall on discord server and say him, sending Discord name
+
+## Copyright Spargat Team 2024

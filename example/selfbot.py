@@ -1,6 +1,13 @@
-from blockmanlauncher import selfbot
-# Definition of login
-login = selfbot()
+from blockmanlauncher import selfbot  # Import selfbot module
 
-# Conect to our api with selfbot
-login.bl(token="token aici", user_id="id aici")  # Change with ur accesToken and ID, this is an example only ( can be get from app )
+# Set login data here
+user_data = {
+    "id": "(ur user id, is a number of ur user what can anyone get)",
+    "accessToken": "(ur token, is a string what can be get from app)"
+} # Get ur accessToken and id from app
+
+# Selfbot api definition
+blockman = selfbot.SelfBot()  # Instance the selfbot api
+
+# Conect to server as selfbot
+blockman.bl(token=user_data["accessToken"], user_id=user_data["id"]) 

@@ -2,7 +2,7 @@ import socket
 import json
 from .config import API_URL
 
-class selfbot:
+class SelfBot:
     def __init__(self):
         self.access_token = None
         self.user_id = None
@@ -25,18 +25,26 @@ class selfbot:
                 s.connect((host, port))
                 print(f"Connected to API at {API_URL}")
 
-                payload = {
-                    "access_token": self.access_token,
-                    "user_id": self.user_id,
-                    "endpoint": "/api/v1/selfbot"
+                user_data = {
+                    "id": self.user_id,
+                    "accessToken": self.access_token
                 }
-                message = json.dumps(payload)
+                user_data_json = json.dumps(user_data)
 
-                s.sendall(message.encode('utf-8'))
-                print(f"Sent message: {message}")
+                request_message = (
+                    f'POST /api/v1/selfbot HTTP/1.1\r\n'
+                    f'Host: {host}\r\n'
+                    f'Content-Type: application/json\r\n'
+                    f'Content-Length: {len(user_data_json)}\r\n'
+                    f'\r\n'
+                    f'{user_data_json}'
+                )
 
-                response = s.recv(1024)
-                print(f"Received response: {response.decode('utf-8')}")
+                print(f'Sending: {request_message}')
+                s.sendall(request_message.encode('utf-8'))
+
+                response = s.recv(4096)
+                print(f'Received response: {response.decode("utf-8")}')
         
         except Exception as e:
             print(f"Error: {e}")
