@@ -1,1 +1,1 @@
-API_URL = "tcp://localhost:8908"
+API_URL = "https://localhost:8908"
